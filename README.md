@@ -1,5 +1,3 @@
-# AML-Transaction-Monitoring-Case-Management-Dashboard
-A power BI and excel based dashboard designed to monitor activities and alerts from high risk clients, manage SARs across PEPs and non PEPs.
 # AML Transaction Monitoring — Analytics Portfolio Project (2024–2025)
 ## 1) Project Overview
 This project simulates an end-to-end **Anti-Money Laundering (AML) transaction monitoring** operation across a fictional multi-jurisdictional bank (2024–2025). The core focus is **alert lifecycle management**—identifying suspicious transactions, understanding where financial crime risk concentrates (client segment, product, jurisdiction, and channel), and defining escalation and SAR-filing actions to close detection and documentation gaps. The dataset covers **22,399 transactions**, **500+ clients**, and **15 detection rules** across all major AML typologies including structuring, high-risk jurisdiction transfers, PEP exposure, sanctions proximity, layering, and crypto/virtual asset activity.
