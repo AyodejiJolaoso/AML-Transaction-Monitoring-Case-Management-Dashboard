@@ -4,24 +4,17 @@ This project simulates an end-to-end **Anti-Money Laundering (AML) transaction m
 
 ## 2) Tools Used
 - **Excel** — data structuring, pivot analysis, KYC/SAR/jurisdiction cross-tabulations, and risk distribution summaries
-- **SQL** — querying, aggregation, alert rate calculations, KPI derivation (SAR conversion rate, false positive ratio, escalation rate)
-- **Power BI** — visualisation and executive dashboarding (SteerCo-ready views across three report pages)
-- **Microsoft Word** — written recommendations register (60 actions, executive summary, regulatory hooks)
-
+- **Power BI** — visualisation and executive dashboarding (SteerCo-ready views across three report pages
 ## 3) Insight Highlights
 - **Alert coverage is structurally broad:** 15 detection rules span all primary FATF typologies — structuring, layering, PEP transactions, dormant account reactivation, sanctions proximity, and crypto activity.
 - **Risk rating is heavily skewed toward elevated segments:** only **22.3%** of transactions (4,997) relate to Low-rated customers; **77.7%** sit in Medium, High, or Very High — indicating genuine portfolio risk concentration or calibration issues in the underlying rating model.
 - **High-risk jurisdiction exposure is material:** 10 FATF/EU-listed jurisdictions account for **2,831 transactions**; North Korea, Iran, and Afghanistan generate the highest SAR-to-transaction ratios relative to volume.
 - **PEP population SAR rate is elevated:** **109 unique PEP-flagged clients** have confirmed SAR filings, making PEP status combined with transaction velocity a reliable predictor of suspicious activity.
-- **Structuring and velocity rules are the primary alert drivers:** R002 (structuring/smurfing) and R006 (fund velocity > 3× expected monthly volume) represent the highest-frequency trigger rules, consistent with layering typologies in cross-border banking.
-- **Crypto transactions require dedicated tuning:** R012 captures virtual asset exchange transactions across multiple client types — a population with non-traditional value transfer characteristics that demands separate monitoring logic.
-
 ## 4) What I Achieved
 - Built a **full AML transaction monitoring risk view** across a 22,399-transaction synthetic dataset covering alert generation, case management, SAR filing, and multi-dimensional risk scoring.
-- Designed a **15-rule detection framework** mapped to FATF typologies and EU AMLD thresholds, with rule codes, trigger conditions, and alert type classifications aligned to real-world TM practice.
 - Identified where financial crime risk concentrates — by jurisdiction, client segment, product type, and channel — to support **risk-based alert prioritisation** and MLRO escalation decisions.
 - Constructed a **four-dimension risk scoring model** (geographic, product, channel, composite) driving alert priority and auto-escalation logic.
-- Produced a **SteerCo-ready Power BI dashboard** (3 pages) covering SAR filing intelligence, PEP/customer risk exposure, and risk rating distribution.
+- Produced a **SteerCo-ready Power BI dashboard** covering SAR filing intelligence, PEP/customer risk exposure, and risk rating distribution.
 - Delivered a **60-action written recommendations register** with regulatory hooks across FATF, EU AMLD, Wwft, CBN, and FINTRAC/PCMLTFA frameworks.
 
 ## 5) Challenges & Solutions
@@ -35,12 +28,10 @@ This project simulates an end-to-end **Anti-Money Laundering (AML) transaction m
 | Power BI performance on a large transactional model | Slow visuals and relationship ambiguity across alert, case, and SAR fields | Used aggregated pivot inputs for dashboard visuals and limited report pages to **decision-grade KPIs** (SteerCo-level views only) |
 
 ## 6) Recommendations (AML Remediation Focus)
-1. **PEP-first review sprint:** prioritise the 109 PEP-flagged clients with confirmed SAR filings for immediate enhanced due diligence refresh and MLRO case review.
+1. **PEP-first review sprint:** prioritise the 109 PEP-flagged clients with confirmed SAR filings for MLRO case review.
 2. **Jurisdiction exposure remediation:** implement enhanced monitoring and relationship review for all clients with active counterparty flows into North Korea, Iran, Afghanistan, Somalia, and Cuba — the five jurisdictions with the highest SAR-to-transaction ratios.
-3. **Alert tuning for structuring and velocity rules:** R002 and R006 generate the highest alert volumes; conduct a false positive review and recalibrate thresholds using 90-day rolling baseline data.
-4. **KYC refresh programme:** address the population of clients in `Expired`, `Due for Renewal`, and `Pending EDD` status — particularly where transactions continue to be processed (a direct R010 trigger and regulatory examination risk).
-5. **Crypto monitoring framework:** establish a dedicated detection stream for R012 (virtual asset transactions) with specific risk scoring, counterparty identification requirements, and Travel Rule compliance checks.
-6. **Governance and KPIs:** implement weekly case closure tracking (alert disposition rate, escalation rate, SAR conversion rate, average days case open) and set escalation triggers for cases exceeding 30-day open thresholds.
+3. **KYC refresh programme:** address the population of clients in `Expired`, `Due for Renewal`, and `Pending EDD` status — particularly where transactions continue to be processed (a direct R010 trigger and regulatory examination risk).
+5. **Governance and KPIs:** implement weekly case closure tracking (alert disposition rate, escalation rate, SAR conversion rate, average days case open) and set escalation triggers for cases exceeding 30-day open thresholds.
 
 ## 7) Dataset Source
 - **Synthetic dataset generated using AI** to simulate a multi-jurisdictional bank's AML transaction monitoring environment (2024–2025) for **portfolio and learning purposes**.
